@@ -11,6 +11,7 @@ public class LoginServiceImpl implements LoginService {
 	public String validateUser(LoginBean loginBean) {
 		String username = loginBean.getUsername();
 		String password = loginBean.getPassword();
+		if(username.equals("korisnik") && password.equals("korisnik")) {
 			return "true";
 		} else {
 			return "false";
