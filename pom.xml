@@ -16,6 +16,8 @@
 		<spring.security.version>3.2.5.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
 		<javax.servlet.version>3.0.1</javax.servlet.version>
+		<jackson.version>2.6.3</jackson.version>
+		<jacksonmapper.version>1.9.13</jacksonmapper.version>
 		<mysql.connector.version>5.1.30</mysql.connector.version>
 	</properties>
 
@@ -23,6 +25,12 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
@@ -115,9 +123,30 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet.jsp.jstl</groupId>
-			<artifactId>jstl-api</artifactId>
-			<version>1.2</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.0.1.Final</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>4.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 	</dependencies>
 

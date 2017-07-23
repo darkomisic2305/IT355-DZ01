@@ -1,44 +1,43 @@
-<%-- 
-    Document   : soba
-    Created on : Oct 23, 2016, 9:09:09 PM
-    Author     : Darko
---%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@include file="/WEB-INF/views/template/header.jsp"%>
 
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@page language="java" pageEncoding="UTF-8" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<div class="container-wrapper">
+	<div class="container">
+		<div class="page-header">
+			<h1>Detalji o sobi</h1>
 
-<h2>Unesite informacije o sobi</h2>
-<form:form method="POST" action="/DarkoMisic2305/addSoba">
-    <table>
-        <tr>
-            <td><form:label path="brojKreveta"><spring:message code="numOfBeds" /></form:label></td>
-            <td><form:input path="brojKreveta" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="velicina"><spring:message code="size" /></form:label></td>
-            <td><form:input path="velicina" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="imaKupatilo"><spring:message code="hasBathroom" /></form:label></td>
-            <td><form:checkbox path="imaKupatilo" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="imaTv"><spring:message code="hasTv" /></form:label></td>
-            <td><form:checkbox path="imaTv" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="imaKlima"><spring:message code="hasAC" /></form:label></td>
-            <td><form:checkbox path="imaKlima" /></td>
-        </tr>
-        <tr>
-            <td><form:label path="cenaPoDanu"><spring:message code="pricePerDay" /></form:label></td>
-            <td><form:input path="cenaPoDanu" /></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="submit" value="Pošalji"/>
-            </td>
-        </tr>
-    </table>
-</form:form>
+			<p class="lead">Ovde mozete videti detalje o odabranoj sobi!</p>
+		</div>
+
+		<div class="container" use-expressions="true">
+			<div class="row">
+				
+				<div class="col-md-5">
+					<p>
+						<strong>Broj kreveta</strong> : ${soba.brojKreveta}
+					</p>
+					<p>
+						<strong>Velicina</strong> : ${soba.velicina} m2
+					</p>
+					<p>
+						<strong>Ima kupatilo</strong> : ${soba.imaKupatilo?"Da":"Ne"}
+					</p>
+					<p>
+						<strong>Ima klima</strong> : ${soba.imaKlima?"Da":"Ne"}
+					</p>
+					<p>
+						<strong>Ima tv</strong> : ${soba.imaTv?"Da":"Ne"}
+					</p>
+					<p>
+						<strong>Cena po danu</strong> : ${soba.cenaPoDanu} EUR
+					</p>
+					<br>
+									
+					<p>
+						<a href="<c:url value="/sveSobe" />" class="btn btn-default">Nazad</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<%@include file="/WEB-INF/views/template/footer.jsp"%>

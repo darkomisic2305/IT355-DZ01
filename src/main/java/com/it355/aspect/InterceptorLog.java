@@ -18,7 +18,7 @@ public class InterceptorLog implements MethodBeforeAdvice {
 		
 	}
 
-	@After("execution(*com.it355.dao.impl.SobaDaoImpl.dodajSobu(..))")
+	/*@After("execution(*com.it355.dao.impl.SobaDaoImpl.dodajSobu(..))")
 	public void logAfter(JoinPoint joinPoint) {
 		System.out.println("Metoda logAfter() je pozvana.");
 		System.out.println("Presretnut je " + joinPoint.getSignature().getName());
@@ -29,5 +29,5 @@ public class InterceptorLog implements MethodBeforeAdvice {
 		System.out.println("Metoda logAfterThrowing() je pozvana.");
 		System.out.println("Presretnut je " + joinPoint.getSignature().getName());
 		System.out.println("Exception je " + error);
-	}
+	}*/
 }

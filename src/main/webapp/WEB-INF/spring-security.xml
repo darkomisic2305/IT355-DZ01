@@ -9,6 +9,12 @@
 
 	<http auto-config="true" use-expressions="true">
 	    <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')"/>
+	    <intercept-url pattern="/addSoba" access="hasRole('ROLE_ADMIN')"/>
+	    <intercept-url pattern="/editSoba/**" access="hasRole('ROLE_ADMIN')"/>
+	    <intercept-url pattern="/deleteSoba/**" access="hasRole('ROLE_ADMIN')"/>
+	    <intercept-url pattern="/addHotel" access="hasRole('ROLE_ADMIN')"/>
+	    <intercept-url pattern="/editHotel/**" access="hasRole('ROLE_ADMIN')"/>
+	    <intercept-url pattern="/deleteHotel/**" access="hasRole('ROLE_ADMIN')"/>
 	    <access-denied-handler error-page="/403" />
 	    <form-login
 	        login-page="/login"
