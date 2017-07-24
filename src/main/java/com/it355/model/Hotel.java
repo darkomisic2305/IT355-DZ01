@@ -8,9 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "hotel")
+@XmlRootElement
 public class Hotel implements Serializable {
 
 	private static final long serialVersionUID = -1129343045456946026L;
@@ -23,6 +25,7 @@ public class Hotel implements Serializable {
 	private String naziv;
 	@Column(name = "adresa")
 	private String adresa;
+	@Column(name = "kategorija")
 	private String kategorija;
 
 	public Hotel() {
@@ -37,7 +40,6 @@ public class Hotel implements Serializable {
 		this.kategorija = kategorija;
 	}
 
-	
 	public int getHotelId() {
 		return hotelId;
 	}
@@ -46,7 +48,6 @@ public class Hotel implements Serializable {
 		this.hotelId = hotelId;
 	}
 
-	
 	public String getNaziv() {
 		return naziv;
 	}
@@ -55,7 +56,6 @@ public class Hotel implements Serializable {
 		this.naziv = naziv;
 	}
 
-	
 	public String getAdresa() {
 		return adresa;
 	}
@@ -64,7 +64,6 @@ public class Hotel implements Serializable {
 		this.adresa = adresa;
 	}
 
-	@Column(name = "kategorija")
 	public String getKategorija() {
 		return kategorija;
 	}

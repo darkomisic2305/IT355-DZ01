@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -15,6 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="soba")
+@XmlRootElement
 public class Soba implements Serializable {
 
 	private static final long serialVersionUID = -1493701830989975609L;
