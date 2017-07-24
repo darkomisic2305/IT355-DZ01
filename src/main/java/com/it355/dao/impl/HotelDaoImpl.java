@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.it355.dao.HotelDao;
 import com.it355.model.Hotel;
+import com.it355.model.Soba;
 
 @Repository
 @Transactional
@@ -42,6 +43,11 @@ public class HotelDaoImpl implements HotelDao {
 	@Override
 	public void deleteHotel(Hotel hotel) {
 		sessionFactory.getCurrentSession().delete(hotel);
+	}
+
+	@Override
+	public List<Soba> getListaSobaPoHotelu(Hotel hotel) {
+		return sessionFactory.getCurrentSession().createCriteria(Soba.class).add(Restrictions.eq("hotel", hotel)).list();
 	}
 
 }

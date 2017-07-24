@@ -12,6 +12,13 @@
 		<form:form action="${pageContext.request.contextPath}/editSoba" method="post" commandName="soba">
 		<form:hidden path="sobaId" value="${soba.sobaId}"/>
 			<div class="form-group">
+				<label for="hotel">Hotel</label> <form:errors path="hotel" cssStyle="color: #ff0000"/>
+				<form:select path="hotel.hotelId" class="form-Control">
+					<form:option value="" label="Odaberite hotel..." />
+					<form:options itemLabel="naziv" itemValue="hotelId" items="${hoteli}"/>
+				</form:select>
+			</div>
+			<div class="form-group">
 				<label for="name">Broj kreveta</label> <form:errors path="brojKreveta" cssStyle="color: #ff0000"/>
 				<form:input path="brojKreveta" id="brojKreveta" class="form-Control" value="${soba.brojKreveta}"/>
 			</div>

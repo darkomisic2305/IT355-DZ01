@@ -20,7 +20,7 @@ public class Hotel implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "hotel_id")
-	private int hotelId;
+	private Integer hotelId;
 	@Column(name = "naziv")
 	private String naziv;
 	@Column(name = "adresa")
@@ -32,7 +32,7 @@ public class Hotel implements Serializable {
 		super();
 	}
 
-	public Hotel(int hotelId, String naziv, String adresa, String kategorija) {
+	public Hotel(Integer hotelId, String naziv, String adresa, String kategorija) {
 		super();
 		this.hotelId = hotelId;
 		this.naziv = naziv;
@@ -40,11 +40,11 @@ public class Hotel implements Serializable {
 		this.kategorija = kategorija;
 	}
 
-	public int getHotelId() {
+	public Integer getHotelId() {
 		return hotelId;
 	}
 
-	public void setHotelId(int hotelId) {
+	public void setHotelId(Integer hotelId) {
 		this.hotelId = hotelId;
 	}
 

@@ -11,6 +11,13 @@
 
 		<form:form action="${pageContext.request.contextPath}/addSoba" method="post" commandName="soba">
 			<div class="form-group">
+				<label for="hotel">Hotel:</label> <form:errors path="hotel" cssStyle="color: #ff0000"/>
+				<form:select path="hotel.hotelId" id="hotel" class="form-Control">
+					<form:option value="" label="Odaberite hotel..." />
+					<form:options itemLabel="naziv" itemValue="hotelId" items="${hoteli}"/>
+				</form:select>
+			</div>
+			<div class="form-group">
 				<label for="name">Broj kreveta:</label> <form:errors path="brojKreveta" cssStyle="color: #ff0000"/>
 				<form:input path="brojKreveta" id="brojKreveta" class="form-Control" />
 			</div>
@@ -37,6 +44,7 @@
 				<label for="cenaPoDanu">Cena po danu:</label> <form:errors path="cenaPoDanu" cssStyle="color: #ff0000"/>
 				<form:input path="cenaPoDanu" id="cenaPoDanu" class="form-Control" />
 			</div>
+			
 			<br><br>
 			
 			<input type="submit" value="Submit" class="btn btn-default">

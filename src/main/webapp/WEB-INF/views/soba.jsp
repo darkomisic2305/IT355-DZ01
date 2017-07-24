@@ -13,6 +13,9 @@
 			<div class="row">
 				
 				<div class="col-md-5">
+					<h4>
+						<strong>Hotel</strong> : <a href="<c:url value="/hotel/${soba.hotel.hotelId}" />">${soba.hotel.naziv}</a>
+					</h4>
 					<p>
 						<strong>Broj kreveta</strong> : ${soba.brojKreveta}
 					</p>
@@ -34,7 +37,7 @@
 					<br>
 									
 					<p>
-						<a href="<c:url value="/sveSobe" />" class="btn btn-default">Nazad</a>
+						<a href="<c:url value="/sveSobe" />" class="btn btn-default">Povratak na spisak soba</a>
 					</p>
 				</div>
 			</div>

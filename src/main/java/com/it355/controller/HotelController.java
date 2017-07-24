@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.it355.model.Hotel;
+import com.it355.model.Soba;
 import com.it355.service.HotelService;
 
 @Controller
@@ -34,8 +35,9 @@ public class HotelController {
 	@RequestMapping(value = "/hotel/{hotelId}", method = RequestMethod.GET)
 	public String getHotel(@PathVariable(value = "hotelId") int hotelId, Model model) {
 		Hotel hotel = hotelService.getHotelById(hotelId);
-
+		List<Soba> sveSobeHotela = hotelService.getListaSobaPoHotelu(hotel);
 		model.addAttribute("hotel", hotel);
+		model.addAttribute("sveSobe", sveSobeHotela);
 
 		return "hotel";
 	}

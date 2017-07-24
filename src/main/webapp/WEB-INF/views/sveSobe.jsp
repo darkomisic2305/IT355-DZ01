@@ -13,6 +13,7 @@
 		<table class="table table-striped table-hover">
 			<thead>
 				<tr class="bg-success">
+					<th>Hotel</th>
 					<th>Broj kreveta</th>
 					<th>Velicina sobe</th>
 					<th>Ima kupatilo</th>
@@ -24,13 +25,14 @@
 			</thead>
 			<c:forEach items="${sveSobe}" var="soba">
 				<tr>
+					<td>${soba.hotel.naziv}</td>
 					<td>${soba.brojKreveta}</td>
 					<td>${soba.velicina}</td>
 					<td>${soba.imaKupatilo?"Da":"Ne"}</td>
 					<td>${soba.imaKlima?"Da":"Ne"}</td>
 					<td>${soba.imaTv?"Da":"Ne"}</td>
 					<td>${soba.cenaPoDanu} EUR</td>
-
+					
 					<td><a href="<spring:url value="/soba/${soba.sobaId}" />">
 							<span class="glyphicon glyphicon-info-sign"></span>
 					</a>

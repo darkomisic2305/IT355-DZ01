@@ -1,6 +1,8 @@
 package com.it355.controller;
 
+import com.it355.model.Hotel;
 import com.it355.model.Soba;
+import com.it355.service.HotelService;
 import com.it355.service.SobaService;
 
 import java.util.List;
@@ -9,6 +11,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +28,8 @@ public class SobaController {
     @Autowired
     private SobaService sobaService;
     
+    @Autowired
+    private HotelService hotelService;
     
     @RequestMapping(value="/sveSobe", method=RequestMethod.GET)
     public String sveSobe(Model model) {
@@ -46,15 +51,22 @@ public class SobaController {
     
     @RequestMapping(value="/addSoba", method=RequestMethod.GET)
     public String addSoba(Model model) {
+    	System.err.println("Usao je u addSoba GET metodu.");
     	Soba soba = new Soba();
-    	
+    	List<Hotel> hoteli = hotelService.getSveHotele();
     	model.addAttribute("soba", soba);
+    	model.addAttribute("hoteli", hoteli);
     	
     	return "addSoba";
     }
     
     @RequestMapping(value="/addSoba", method=RequestMethod.POST)
-    public String addSoba(@ModelAttribute("soba") Soba soba) {
+    public String addSoba(@Valid @ModelAttribute("soba") Soba soba, BindingResult result) {
+    	if (result.hasErrors()) {
+			return "addSoba";
+		}
+    	System.err.println("Usao je u addSoba metodu.");
+    	System.err.println("Soba: " + soba);
     	sobaService.addSoba(soba);
     	
     	return "redirect:/sveSobe";
@@ -63,8 +75,9 @@ public class SobaController {
     @RequestMapping("/editSoba/{id}")
 	public String editSoba(@PathVariable("id") int id, Model model) {
 		Soba soba = sobaService.getSobaById(id);
-
-		model.addAttribute("soba", soba);
+		List<Hotel> hoteli = hotelService.getSveHotele();
+    	model.addAttribute("soba", soba);
+    	model.addAttribute("hoteli", hoteli);
 
 		return "editSoba";
 	}

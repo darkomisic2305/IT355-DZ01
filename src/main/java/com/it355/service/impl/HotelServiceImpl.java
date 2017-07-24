@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.it355.dao.HotelDao;
 import com.it355.model.Hotel;
+import com.it355.model.Soba;
 import com.it355.service.HotelService;
 
 @Service
@@ -38,6 +39,11 @@ public class HotelServiceImpl implements HotelService {
 	@Override
 	public void deleteHotel(Hotel hotel) {
 		hotelDao.deleteHotel(hotel);
+	}
+
+	@Override
+	public List<Soba> getListaSobaPoHotelu(Hotel hotel) {
+		return hotelDao.getListaSobaPoHotelu(hotel);
 	}
 
 }

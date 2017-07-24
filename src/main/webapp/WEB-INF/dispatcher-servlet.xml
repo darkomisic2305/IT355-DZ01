@@ -57,8 +57,8 @@
 
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
 
-	
-	
+
+
 	<!-- <bean id="logPointcutAdvisor" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor"> 
 		<property name="advice" ref="logAspect" /> <property name="mappedName"> <value>*</value> 
 		</property> </bean> -->
