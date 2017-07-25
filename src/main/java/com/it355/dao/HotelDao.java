@@ -9,7 +9,7 @@ public interface HotelDao {
 	
 	public List<Hotel> getSveHotele();
 	public Hotel getHotelById(int id);
-	public void addHotel(Hotel hotel);
+	public Hotel addHotel(Hotel hotel);
 	public void editHotel(Hotel hotel);
 	public void deleteHotel(Hotel hotel);
 	public List<Soba> getListaSobaPoHotelu(Hotel hotel);

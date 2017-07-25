@@ -35,8 +35,8 @@ public class SobaDaoImpl implements SobaDao {
 	}
 
 	@Override
-	public void addSoba(Soba soba) {
-		sessionFactory.getCurrentSession().save(soba);
+	public Soba addSoba(Soba soba) {
+		return (Soba)sessionFactory.getCurrentSession().save(soba);
 	}
 
 	@Override

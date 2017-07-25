@@ -26,8 +26,8 @@ public class SobaServiceImpl implements SobaService {
 	}
 
 	@Override
-	public void addSoba(Soba soba) {
-		sobaDao.addSoba(soba);
+	public Soba addSoba(Soba soba) {
+		return sobaDao.addSoba(soba);
 	}
 
 	@Override

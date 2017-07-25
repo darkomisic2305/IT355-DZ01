@@ -31,8 +31,8 @@ public class HotelDaoImpl implements HotelDao {
 	}
 
 	@Override
-	public void addHotel(Hotel hotel) {
-		sessionFactory.getCurrentSession().save(hotel);
+	public Hotel addHotel(Hotel hotel) {
+		return (Hotel)sessionFactory.getCurrentSession().save(hotel);
 	}
 
 	@Override

@@ -8,7 +8,7 @@ public interface SobaService {
 
 	public List<Soba> getSveSobe();
 	public Soba getSobaById(int id);
-	public void addSoba(Soba soba);
+	public Soba addSoba(Soba soba);
 	public void editSoba(Soba soba);
 	public void deleteSoba(Soba soba);
 }
